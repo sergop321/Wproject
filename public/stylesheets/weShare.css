@@ -1,0 +1,59 @@
+/* line 7, ../../views/sass/weShare.scss */
+header {
+  color: white;
+  background: #27c6ee;
+}
+/* line 11, ../../views/sass/weShare.scss */
+header .header_container {
+  background: #27c6ee;
+  max-width: 100%;
+  height: 3.75em;
+}
+/* line 15, ../../views/sass/weShare.scss */
+header .header_container h2 {
+  float: left;
+  font-size: 2em;
+}
+/* line 20, ../../views/sass/weShare.scss */
+header .header_container a {
+  color: white;
+}
+/* line 24, ../../views/sass/weShare.scss */
+header .header_container a:hover {
+  font-weight: bold;
+}
+/* line 28, ../../views/sass/weShare.scss */
+header .header_container .seperator {
+  width: 1px;
+  height: 60px;
+  background: transparent url("../images/seperator.png") no-repeat 0px 0px;
+  float: left;
+  margin-left: 5px;
+}
+/* line 35, ../../views/sass/weShare.scss */
+header .header_container .seperator.right_sep {
+  float: right;
+  margin-right: 5px;
+  margin-left: 0px;
+}
+/* line 42, ../../views/sass/weShare.scss */
+header .header_container .main-nav {
+  background: #27c6ee;
+}
+/* line 46, ../../views/sass/weShare.scss */
+header .header_container .main-nav div.columns {
+  text-align: right;
+}
+/* line 50, ../../views/sass/weShare.scss */
+header .header_container .main-nav div.columns.w100px {
+  max-width: 6.25em;
+}
+/* line 54, ../../views/sass/weShare.scss */
+header .header_container .main-nav div.columns a {
+  margin-top: 2.5em;
+  float: right;
+}
+/* line 61, ../../views/sass/weShare.scss */
+header .header_container .logo {
+  background: #27c6ee;
+}

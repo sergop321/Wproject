@@ -1,0 +1,191 @@
+
+<!DOCTYPE html>
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang="he" dir="ltr" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="he" dir="ltr"> <!--<![endif]-->
+
+<head>
+  <meta charset="utf-8" />
+  <!--<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+  <meta name="language" content="he">
+  <title>weShare</title>
+
+  <link rel="stylesheet" href="css/bootstrap.min.css" />
+  <link rel="stylesheet" href="css/bootstrap-responsive.min.css" />
+  <link rel="stylesheet" href="css/weShare.css" />
+  <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.css" />
+  <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+  <script src="http://code.jquery.com/ui/1.10.2/jquery-ui.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+
+  <!--[if lt IE 9]>
+  <script>
+  document.createElement('header');
+  document.createElement('nav');
+  document.createElement('section');
+  document.createElement('article');
+  document.createElement('aside');
+  document.createElement('footer');
+  document.createElement('hgroup');
+  </script>
+  <![endif]-->
+</head>
+<body>
+  <header>
+    <div class='header_container'>
+      <div class='container'>
+        <div class='logo'>
+          <h2><a href="/">We Share</a></h2>
+          <div class="seperator"></div>
+        </div>
+        <div class='main_nav'>
+          <div class='menu'>
+            <a class='nav_link' href="/signup">הרשם</a><div class="seperator right_sep"></div>
+          </div>
+          <div class='menu'>
+            <a class='nav_link' href="/login">כניסה</a><div class="seperator right_sep"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <div class='clear'></div>
+  <div class='submit_form form'>
+    <div class='container'>
+      <form class='submit_prod'>
+        <div class='span5'>
+          <h2>הכנס מוצר</h2>
+          <div class="control-group">
+            <label class="control-label" for="prod_title">
+              <span class="form-required" title="השדא חובה.">*</span>
+              שם המוצר
+            </label>
+            <div class="controls">
+              <input type="text" name="prod_title" id='prod_title' class='span4'>
+            </div>
+          </div>
+          <div class="control-group">
+            <label class="control-label" for="prod_category">
+              <span class="form-required" title="השדא חובה.">*</span>
+              קטגוריה</label>
+            <div class="controls">
+              <select type="text" name="prod_category" id='prod_category' class='span4'>
+                <option value="" style="display:none;"></option>
+                <option>מוצרי חשמל</option>
+                <option>מוצרי אלקטרוניקה</option>
+                <option>שירותים</option>
+                <option>שקר כלשהו אחר</option>
+              </select>
+            </div>
+          </div>
+          <div class="control-group">
+            <label class="control-label" for="prod_sub_category">
+              <span class="form-required" title="השדא חובה.">*</span>
+              תת קגוריה</label>
+            <div class="controls">
+              <select type="text" name="prod_sub_category" id='prod_sub_category' class='span4'>
+                <option value="" style="display:none;"></option>
+                <option>פאלפונים</option>
+                <option>טבלטים</option>
+                <option>מסכי מחשב</option>
+                <option>שקר כלשהו אחר</option>
+              </select>
+            </div>
+          </div>
+          <div class="control-group">
+            <label class="control-label" for="prod_adress">
+              <span class="form-required" title="השדא חובה.">*</span>
+              מקום השכרה</label>
+            <div class="controls">
+              <input type="text" name="prod_adress" id='prod_adress' class='span4'>
+            </div>
+          </div>
+          <div class="control-group">
+            <label class="control-label" for="prod_phone">
+              <span class="form-required" title="השדא חובה.">*</span>
+              טלפון ליצירת קשר</label>
+            <div class="controls">
+              <input type="text" name="prod_phone" id='prod_phone' class='span4'>
+            </div>
+          </div>
+          <div class="control-group">
+            <label class="control-label" for="prod_price">
+              <span class="form-required" title="השדא חובה.">*</span>
+              מחיר השכרה ליום</label>
+            <div class="controls">
+              <input type="text" name="prod_price" id='prod_price' class='span1'>
+            </div>
+          </div>
+          <div class="control-group">
+            <label class="control-label" for="prod_deposit">פקדון (השאר ריק למקרה אין צורך בפיקדון)</label>
+            <div class="controls">
+              <input type="text" name="prod_deposit" id='prod_deposit' class='span1'>
+            </div>
+          </div>
+          <div class="control-group">
+            <label class="control-label" for="prod_details">
+              <span class="form-required" title="השדא חובה.">*</span>
+              פרטים נוספים</label>
+            <div class="controls">
+              <textarea rows="8" name="prod_details" id='prod_details' class='span4'></textarea>
+            </div>
+          </div>
+          <div class="control-group checkbox">
+            <label class="checkbox">
+              <input type="checkbox" value="" checked='checked' name='show_phone' id='show_phone'>
+              <span class='help-inline'>אני מסכים לחשוף את הטלפון שלי (במקרה וסימנת שלא אנחנו נחשוף את האיימייל שלך(</span>
+            </label>
+          </div>
+        </div>
+        <div class='span5'>
+          <h2>פרטיים טכניים</h2>
+          אנא בחר כמה שיותר מאפיינים טכניים על מנת שלמשכיר יהיה את כל המידע הדרוש
+          <div class="control-group">
+            <label class="control-label" for="technical_details">מאפיינים</label>
+            <div class="controls">
+              <select type="text" name="technical_details" id='technical_details' class='span4'>
+                <option value=""></option>
+                <option>הספק</option>
+                <option>גודל פיזי</option>
+                <option>מערכת הפעלה</option>
+                <option>שקר כלשהו אחר</option>
+              </select>
+            </div>
+          </div>
+          <div class='tech_details' id='tech_details'>
+
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+  <footer>
+    <div class='container'>
+      <div class='footer_nav'><h3>שאלות נפוצות</h3>
+        <ul>
+          <li><a href='takanon'>תקנון</a></li>
+          <li><a href='takanon'>תקנון</a></li>
+          <li><a href='takanon'>תקנון</a></li>
+          <li><a href='takanon'>תקנון</a></li>
+        </ul>
+      </div>
+      <div class='footer_nav'><h3>לינקים שימושיים</h3>
+        <ul>
+          <li><a href='takanon'>תקנון</a></li>
+          <li><a href='takanon'>תקנון</a></li>
+          <li><a href='takanon'>תקנון</a></li>
+          <li><a href='takanon'>תקנון</a></li>
+        </ul>
+      </div>
+      <div class='footer_nav'><h3>צור קשר</h3>
+        <ul>
+          <li><a href='takanon'>תקנון</a></li>
+          <li><a href='takanon'>תקנון</a></li>
+          <li><a href='takanon'>תקנון</a></li>
+          <li><a href='takanon'>תקנון</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+  <div class='clear'></div>
+</body>
+</html>
