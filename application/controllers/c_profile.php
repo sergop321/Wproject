@@ -11,7 +11,9 @@ class C_profile extends CI_Controller {
 		
 		$this->load->model("M_profile","data_model");
 		$data = $this->data_model->Get_data();
-		$this->load->view("v_profile", $data);
+		$body = $this->load->view("v_profile", $data, true);
+		//echo var_dump($data);
+		$this->load->view("view_template",array("tittle"=>"we share","body"=>$body));
 	}
 }
 ?>
