@@ -2,11 +2,8 @@
 class M_product extends CI_Model
 {
 	private $user_fields_to_show = array("user_name", "renter_score", "facebook_profile_url", "phone");
-														
-	private $objects_viewed_limit = 3;
-	private $notification_limit = 3; 
-	private $product_url = "products/";
-	private $search_results_url = "";
+	private $objects_fields_to_show = array("name", "area", "adress", "price", "description", "extra_info");
+	private $objects_pictures_limit = 3;
 	
 	public function __construct()
 	{
@@ -26,7 +23,31 @@ class M_product extends CI_Model
 	 
 	 private function get_object_info($object_id)
 	 {
-	 	
+	 	$select_fields = implode(", ", $this->objects_fields_to_show);
+		$select_fields .= ", table_name, category_fields_id";
+	 	$object_fields = $this->db->select($select_fields)
+										  ->from("objects")
+										  ->where("available", 1)
+										  ->join('category_values', 'category_id = category_values.id')
+										  ->get()
+										  ->row_array();
+										  
+		$table_name = $object_fields["table_name"];
+		$category_fields_id = $object_fields["category_fields_id"];
+		
+		unset($object_fields["table_name"]);
+		unset($object_fields["category_fields_id"]);
+		$object_fields["extra_info"] = json_decode($object_fields["extra_info"], true); 
+		
+		$object_common_data = $this->db->select($table_name.".*, sub_category.name as sub_category_name")
+												 ->from("$table_name")
+												 ->join("sub_category", "sub_category.id = $table_name.sub_category_id")
+												 ->get()
+												 ->row_array();
+												 
+		unset($object_common_data["id"]);
+		
+		return array("object_spacefic_data" => $object_fields, "object_common_data" => $object_common_data);
 	 }
 	 
 	 private function get_user_info($object_id)
@@ -41,23 +62,11 @@ class M_product extends CI_Model
 	 
 	 private function get_object_images($object_id)
 	 {
-	 	$images = $this->db->select("pic_url")->get_where("object_pictures",array("object_id"=>$object_id, "is_show" => 1))->result_array();
+	 	$images = $this->db->select("pic_url")->get_where("object_pictures",array("object_id"=>$object_id, "is_show" => 1), $this->objects_pictures_limit)->result_array();
 		
 		return $images;
 	 }
-	 
-	 private function get_products_you_look_for($user_id)
-	 {
-	 	//TODO: maybe add available=1 in the object in get_where
-	 	$products =	$this->db->select('objects.name as name')
-								   ->join('objects', 'objects.id = object_id')
-									->order_by("date_searched", "desc")
-								   ->get_where("user_view_object_relation", array("user_view_object_relation.user_id" => $user_id, "active" => 1), $this->objects_viewed_limit) 
-									->result_array();
-					
-		return $this->rended_products($products, $this->search_results_url);
-	 }
-	 
+	  
 	 private function get_related_objects($object_id)
 	 {
 		//TODO: add this feature in the future(in mockup too)
