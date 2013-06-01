@@ -4,14 +4,14 @@
       <h2 class='prod_title'><?php echo $object_info['object_spacefic_data']['name']; ?></h5>
       <div class='details'>
         <dl class="dl-horizontal">
+          <dt>אזור</dt>
+          <dd><?php echo $object_info['object_spacefic_data']['area']; ?></dd>
           <dt>מקום איסוף</dt>
-          <dd>רחוב שאול המלך 12 פתח תקווה</dd>
+          <dd><?php echo $object_info['object_spacefic_data']['adress']; ?></dd>
           <dt>פקדון</dt>
-          <dd>180 ש"ח</dd>
+          <dd>סטס הגיבור צריך להוסיף</dd><!-- TODO add deposit -->
           <dt>מחיר להיום</dt>
-          <dd>120 ש"ח</dd>
-          <dt>זמינות</dt>
-          <dd>מיידית</dd>
+          <dd><?php echo $object_info['object_spacefic_data']['adress']; ?></dd>
           <dt>מצב</dt>
           <dd>חדש</dd>
         </dl>
