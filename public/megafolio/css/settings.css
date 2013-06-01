@@ -72,9 +72,9 @@ website:   	http://www.themepunch.com
 
 
 
-.mega-title							{	 text-align: left; font-family: 'Open Sans', sans-serif;  font-size:24px; line-height: 24px; color:#fff; font-weight:400; }
-.mega-date							{	 text-align: left; font-family: 'Open Sans', sans-serif;  font-size:15px; color:#666; font-weight:300; margin-top: 0px;}
-.mega-covercaption p				{	 text-align: left; font-family: 'Open Sans', sans-serif;  font-size:13px; color:#555; font-weight:400; margin-top:12px; }
+.mega-title							{	 text-align: right; font-family: 'Open Sans', sans-serif;  font-size:24px; line-height: 24px; color:#fff; font-weight:400; }
+.mega-date							{	 text-align: right; font-family: 'Open Sans', sans-serif;  font-size:15px; color:#666; font-weight:300; margin-top: 0px;}
+.mega-covercaption p				{	 text-align: right; font-family: 'Open Sans', sans-serif;  font-size:13px; color:#555; font-weight:400; margin-top:12px; }
 .mega-covercaption a 				{	 color: #fff; text-decoration: none; border-bottom: 1px dotted #fff; }
 .mega-covercaption a:hover			{	 text-decoration: none; border-bottom: 0; }
 
@@ -224,7 +224,7 @@ website:   	http://www.themepunch.com
 									}
 
 
-.mega-socialbar span				{	 text-align:left; font-family: 'Open Sans', sans-serif;  font-size:11px; color:#777; font-weight:400;line-height:16px; text-shadow:0px 1px 0px #fff;}
+.mega-socialbar span				{	 text-align:right; font-family: 'Open Sans', sans-serif;  font-size:11px; color:#777; font-weight:400;line-height:16px; text-shadow:0px 1px 0px #fff;}
 
 .mega-soc							{	cursor:pointer; background-position:left 2px !important; min-width:16px;height:18px; margin-top:-2px;}
 .mega-soc:hover						{	background-position:left -14px !important; }
