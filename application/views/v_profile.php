@@ -51,7 +51,7 @@
             </div>
             <div class='msg_body'>
               <div>
-                <?php echo $message["body"];?>
+                <?php echo $message;?>
               </div>
             </div>
             <div class='msg_actions'>
