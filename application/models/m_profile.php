@@ -37,8 +37,20 @@ class M_profile extends CI_Model
 	 
 	 private function get_messages($user_id)
 	 {
-	 	//TODO: to do the messages
-	 	return array();
+	 	$messages =  $this->db->select("intended_user_name, template")
+									 ->where(array("active" => 1, "intended_user_id" => $user_id, "type" => 1))
+									 ->join("notificatations_tempaltes", "notificatations_tempaltes.id = notification_template_id")
+									 ->get("notifications", $this->notification_limit)
+									 ->result_array();
+		
+		$rended_messages = __::map($messages, function($message){
+			$user_name = $message["intended_user_name"];
+			$text = $message["template"];
+			$rended_message =  str_replace("{user_name}", $user_name, $text);
+			return $rended_message;
+		});
+									 
+	 	return $rended_messages;
 	 }
 	 
 	 private function get_your_products($user_id)
