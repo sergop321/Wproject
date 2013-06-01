@@ -6,11 +6,13 @@ if (!defined('BASEPATH'))
 
 class C_product extends CI_Controller {
 
-	public function index($object_id)
+	public function index()
 	{	
+		$object_id = 5;
 		$this->load->model("M_product","data_model");
 		$data = $this->data_model->Get_data($object_id);
-		$this->load->view("view_template",array("tittle"=>"we share","body"=>print_r($data,true)));
+		$body = $this->load->view("v_product", $data, true);
+		$this->load->view("view_template",array("tittle"=>"we share","body"=>$body));
 		
 	}
 }
