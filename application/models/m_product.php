@@ -2,7 +2,7 @@
 class M_product extends CI_Model
 {
 	private $user_fields_to_show = array("user_name", "renter_score", "facebook_profile_url");
-	private $objects_fields_to_show = array("name", "area", "adress", "price", "description", "extra_info", "phone");
+	private $objects_fields_to_show = array("name", "area", "adress", "price", "description", "extra_info", "phone", "deposit");
 	private $objects_pictures_limit = 3;
 	
 	public function __construct()

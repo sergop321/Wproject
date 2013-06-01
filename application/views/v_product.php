@@ -9,76 +9,94 @@
           <dt>מקום איסוף</dt>
           <dd><?php echo $object_info['object_spacefic_data']['adress']; ?></dd>
           <dt>פקדון</dt>
-          <dd>סטס הגיבור צריך להוסיף</dd><!-- TODO add deposit -->
+          <dd><?php echo $object_info['object_spacefic_data']['deposit']; ?></dd>
           <dt>מחיר להיום</dt>
-          <dd><?php echo $object_info['object_spacefic_data']['adress']; ?></dd>
-          <dt>מצב</dt>
-          <dd>חדש</dd>
+          <dd><?php echo $object_info['object_spacefic_data']['price']; ?></dd>
         </dl>
       </div>
       <div class='contact'>
         <div class='contact_details'>
-          <span class='phone'>0527892068</span>
+          <span class='phone'><?php echo $object_info['object_spacefic_data']['phone']; ?></span>
           לבירור ולהזמנה תתקשר
         </div>
-        <div class='availability'>כרגע זמין</div>
+        <!-- <div class='availability'>כרגע זמין</div> -->
       </div>
       <div class='seller_details'>
         <div class='seller_name'>
-          <a href='seller23'>חיים כהן</a>
-          <div class='seller_rating'>
-            <img src="/images/start_icon16.png" class='inline' width='16' height='auto'/>
-            <img src="/images/start_icon16.png" class='inline' width='16' height='auto'/>
-            <img src="/images/start_icon16.png" class='inline' width='16' height='auto'/>
-            <img src="/images/start_icon16.png" class='inline' width='16' height='auto'/>
-          </div>
+          <a href='seller23'>TODO: seller photo, name and link to facebook</a>
+          <?php if(!empty($user_info['renter_score'])) : ?>
+              <div class='seller_rating'>דירוג משכיר: <?php echo($user_info['renter_score']) ?> <br><!-- TODO number of voters -->
+                <?php for ( $i = 1; $i <= floor($user_info['renter_score']); $i += 1): ?>
+                  <img src="<?php echo base_url(); ?>images/start_icon16.png" class='inline' width='16' height='auto' title='<?php echo($user_info['renter_score']) ?>'/>
+                <?php endfor ?>
+              </div>
+            <?php endif ?>
         </div>
       </div>
     </div>
     <div class='prod_images offeset2 span5'>
-      <div class='main_images'>
-        <img src="http://lorempixel.com/300/300/technics" class='img-polaroid' />
-      </div>
-      <div class='small_images'>
-        <img src="http://lorempixel.com/50/50/technics" />
-        <img src="http://lorempixel.com/50/50/technics" />
-        <img src="http://lorempixel.com/50/50/technics" />
-      </div>
+      <?php if (!empty($object_images)): ?>
+        <div class='main_images'>
+          <img src="<?php echo $object_images['url'];?>" class='img-polaroid' />
+        </div>
+      <?php else: ?>
+        <div class='main_images'>
+          <img src="<?php echo base_url()?>images/default_product.jpg" class='img-polaroid' />
+        </div>
+      <?php endif ?>
+      <?php if(count($object_images) > 1): ?>
+        <div class='small_images'>
+          <?php foreach ($object_images as $image): ?>
+            <img src="<?php echo $image['url'];?>" />
+          <?php endforeach ?>
+        </div>
+      <?php endif ?>
+
     </div>
     <div class='clear'></div>
-    <div class='prod_technical_details'>
-      <h3> פרטים טכניים</h3>
-      <div class='detail_group'>
-        <h4> חומרה </h4>
-        <dl class="dl-horizontal">
-          <dt>מסך</dt>
-          <dd>4inc</dd>
-          <dt>רמקולים</dt>
-          <dd>סטריאו</dd>
-          <dt>גודל</dt>
-          <dd>112*72*8</dd>
-          <dt>מעבד</dt>
-          <dd>A5</dd>
-          <dt>מצלמה</dt>
-          <dd>12mpx</dd>
-        </dl> 
+    <?php if(!empty($object_info['object_spacefic_data']['extra_info'])): ?>
+      <div class='prod_technical_details'>
+        <h3> פרטים טכניים</h3>
+        <div class='detail_group'>
+          <dl class="dl-horizontal">
+            <?php 
+              $i = 0;
+              //print only even extra info
+              foreach ($object_info['object_spacefic_data']['extra_info'] as $key => $info):
+            ?>
+              <?php if(($i % 2) == 0): ?>
+                <dt><?php echo $key;?></dt>
+                <dd><?php echo $info; ?></dd>
+              <?php endif ?>
+              <?php $i++;/*increment i*/ ?>
+            <?php endforeach ?>
+          </dl> 
+        </div>
+        <div class='detail_group'>
+          <dl class="dl-horizontal">
+            <?php 
+              $i = 0;
+              //print only odd extra info
+              foreach ($object_info['object_spacefic_data']['extra_info'] as $key => $info):
+            ?>
+              <?php if(($i % 2) == 1): ?>
+                <dt><?php echo $key;?></dt>
+                <dd><?php echo $info; ?></dd>
+              <?php endif ?>
+              <?php $i++;/*increment i*/ ?>
+            <?php endforeach ?>
+          </dl>
+        </div>
+        <div class='clear'></div>
       </div>
-      <div class='detail_group'>
-        <h4> תוכנה </h4>
-        <dl class="dl-horizontal">
-          <dt>מערכת הפעלה</dt>
-          <dd>ios6</dd>
-          <dt>שפה</dt>
-          <dd>עיברית</dd>
-        </dl>
+    <?php endif?>
+    <?php if(!empty($object_info['object_spacefic_data']['description'])): ?>
+      <div class='more_details'>
+        <h3>פרטים נוספים</h3>
+        <p>
+          <?php echo $object_info['object_spacefic_data']['description'];?>
+        </p>
       </div>
-      <div class='clear'></div>
-    </div>
-    <div class='more_details'>
-      <h3>פרטים נוספים</h3>
-      <p>
-        בקר של תוכל לעריכת, ב הקהילה אינטרנט בהתייחסות בדף. את יוני ספרדית בקר. מתן לתרום ביולי ויקימדיה מה, חפש מה ובמתן ברוכים אווירונאוטיקה. מדע רפואה אספרנטו או. בה צעד שתפו אנגלית. <br>אם החלל ברית המקושרים צ'ט, דת צ'ט מדעי מרצועת בהתייחסות. כתב הבקשה הסביבה ב, החלה המלצת בקרבת גם כתב. מפתח לחבר בה עזה, ב לכאן קבלו יוצרים אחר. מה צילום הגולשות כדי, ארץ ברית ספרדית הקהילה או.<br>עזה ב רקטות ניהול. כתב את להפוך צילום, ארץ העזרה אנתרופולוגיה אם, בשפה קלאסיים צ'ט את. ברית טכנולוגיה בה היא, בקר והוא בהתייחסות גם, של כתב אקראי קלאסיים. או למנוע מבוקשים חפש, על עזה העברית גיאוגרפיה, יוני תיאטרון ביוטכנולוגיה את לוח. רוסית בחירות ב שמו, שמו להפוך בעברית או.
-      </p>
-    </div>
+    <?php endif ?>
   </div>
 </div>
