@@ -15,7 +15,10 @@
   <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.css" />
   <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
   <script src="http://code.jquery.com/ui/1.10.2/jquery-ui.js"></script>
+  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false&amp;libraries=places"></script>
   <script src="js/bootstrap.min.js"></script>
+  <script src="js/underscore-min.js"></script>
+  <script src="js/product_submit.js"></script>
 
   <!--[if lt IE 9]>
   <script>
@@ -51,16 +54,17 @@
   <div class='clear'></div>
   <div class='submit_form form'>
     <div class='container'>
+      <div class='errors' id='errors'></div>
       <form class='submit_prod'>
         <div class='span5'>
           <h2>הכנס מוצר</h2>
           <div class="control-group">
-            <label class="control-label" for="prod_title">
+            <label class="control-label" for="prod_name">
               <span class="form-required" title="השדא חובה.">*</span>
               שם המוצר
             </label>
             <div class="controls">
-              <input type="text" name="prod_title" id='prod_title' class='span4'>
+              <input type="text" name="prod_name" id='prod_name' class='span4'>
             </div>
           </div>
           <div class="control-group">
@@ -70,10 +74,9 @@
             <div class="controls">
               <select type="text" name="prod_category" id='prod_category' class='span4'>
                 <option value="" style="display:none;"></option>
-                <option>מוצרי חשמל</option>
-                <option>מוצרי אלקטרוניקה</option>
-                <option>שירותים</option>
-                <option>שקר כלשהו אחר</option>
+                <option value="electric_products">מוצרי חשמל</option>
+                <option value="electronic_products">מוצרי אלקטרוניקה</option>
+                <option value="clothes">הלבשה</option>
               </select>
             </div>
           </div>
@@ -82,12 +85,8 @@
               <span class="form-required" title="השדא חובה.">*</span>
               תת קגוריה</label>
             <div class="controls">
-              <select type="text" name="prod_sub_category" id='prod_sub_category' class='span4'>
+              <select type="text" name="prod_sub_category" id='prod_sub_category' class='span4' disabled="disabled">
                 <option value="" style="display:none;"></option>
-                <option>פאלפונים</option>
-                <option>טבלטים</option>
-                <option>מסכי מחשב</option>
-                <option>שקר כלשהו אחר</option>
               </select>
             </div>
           </div>
@@ -131,7 +130,7 @@
           </div>
           <div class="control-group checkbox">
             <label class="checkbox">
-              <input type="checkbox" value="" checked='checked' name='show_phone' id='show_phone'>
+              <input type="checkbox" name='show_phone' id='show_phone'>
               <span class='help-inline'>אני מסכים לחשוף את הטלפון שלי (במקרה וסימנת שלא אנחנו נחשוף את האיימייל שלך(</span>
             </label>
           </div>
@@ -144,16 +143,16 @@
             <div class="controls">
               <select type="text" name="technical_details" id='technical_details' class='span4'>
                 <option value=""></option>
-                <option>הספק</option>
-                <option>גודל פיזי</option>
-                <option>מערכת הפעלה</option>
-                <option>שקר כלשהו אחר</option>
+                <option value="power">הספק</option>
+                <option value="size">גודל פיזי</option>
+                <option value="operation_system">מערכת הפעלה</option>
+                <option value="bla_bla">שקר כלשהו אחר</option>
               </select>
             </div>
           </div>
           <div class='tech_details' id='tech_details'>
-
           </div>
+          <button type="button" class="btn btn-primary" id="submit_product" data-loading-text="שומר.." data-complete-text="נשמר!" >שמור מוצר</button>
         </div>
       </form>
     </div>

@@ -16,21 +16,9 @@
   <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
   <script src="http://code.jquery.com/ui/1.10.2/jquery-ui.js"></script>
   <script src="js/bootstrap.min.js"></script>
-  <script>
-    $(function() {
-      $( "#slider-range" ).slider({
-        range: true,
-        min: 0,
-        max: 500,
-        values: [ 75, 300 ],
-        slide: function( event, ui ) {
-          $( "#amount" ).val( "$" + ui.values[ 0 ] + " - $" + ui.values[ 1 ] );
-        }
-      });
-      $( "#amount" ).val( "$" + $( "#slider-range" ).slider( "values", 0 ) +
-        " - $" + $( "#slider-range" ).slider( "values", 1 ) );
-    });
-  </script>
+  <script src="js/jquery.transit.min.js"></script>
+  <script src="js/router.js"></script>
+  <script src="js/search.js"></script>
   <!--[if lt IE 9]>
   <script>
   document.createElement('header');
@@ -77,70 +65,139 @@
     <div class="container">
       <div class='span3 search_menu side_menu'>
         <div class='categories'>
-          <ul class='main_categories'>
-            <li class='main_category'>
+          <ul class='main_categories' id='main_categories'>
+            <li class='main_category' id='electronic_products'>
+              <i class='icon-chevron-left'></i>
               <a href='/mozrie_hasmal'>
                 <h4>
-                  <i class='icon-chevron-left'></i>מוצרי חשמל
+                  מוצרי אלקטרוניקה
                 </h4>
               </a>
-              <ul class='sub_categories'>
-                <li class='sub_category selected'> 
+              <ul class='sub_categories hidden'>
+                <li class='sub_category' id='phones'> 
                   <a href='mozrie_hasmal/telefonim'>
                     <h5>
                       פאלפונים
                     </h5>
                   </a>
                 </li>
-                <li class='sub_category'> 
+                <li class='sub_category' id='tablets'> 
                   <a href='/mozrie_hasmal/tablets'>
                     <h5>
                       טבלטים
                     </h5>
                   </a>
                 </li>
-                <li class='sub_category'> 
+                <li class='sub_category' id='tvs'> 
                   <a href='/mozrie_hasmal/mazlemot'>
                     <h5>
-                      מצלמות
+                      טלוויזיות
                     </h5>
                   </a>
                 </li>
               </ul>
             </li>
-            <li class='main_category'>
+            <li class='main_category' id='clothes'>
+              <i class='icon-chevron-left'></i>
               <a href='/mozrie_hasmal'>
                 <h4>
-                  <i class='icon-chevron-left'></i>בגדים
+                  בגדים
                 </h4>
               </a>
+              <ul class='sub_categories hidden'>
+                <li class='sub_category' id='women_clothes'> 
+                  <a href='mozrie_hasmal/telefonim'>
+                    <h5>
+                      בגדי נשים
+                    </h5>
+                  </a>
+                </li>
+                <li class='sub_category' id='men_clothes'> 
+                  <a href='/mozrie_hasmal/tablets'>
+                    <h5>
+                      בגדי גברים
+                    </h5>
+                  </a>
+                </li>
+                <li class='sub_category' id='wedding_dresses'> 
+                  <a href='/mozrie_hasmal/mazlemot'>
+                    <h5>
+                      שמאלות כלה
+                    </h5>
+                  </a>
+                </li>
+              </ul>
             </li>
-            <li class='main_category'>
+            <li class='main_category' id='camping'>
+              <i class='icon-chevron-left'></i>
               <a href='/mozrie_hasmal'>
                 <h4>
-                  <i class='icon-chevron-left'></i>קאמפינג
+                  קאמפינג
                 </h4>
               </a>
+              <ul class='sub_categories hidden'>
+                <li class='sub_category' id='tents'> 
+                  <a href='mozrie_hasmal/telefonim'>
+                    <h5>
+                      אוהלים
+                    </h5>
+                  </a>
+                </li>
+                <li class='sub_category' id='hammocks'> 
+                  <a href='/mozrie_hasmal/tablets'>
+                    <h5>
+                      ערסלים
+                    </h5>
+                  </a>
+                </li>
+              </ul>
             </li>
-            <li class='main_category'>
+            <li class='main_category' id='books'>
+              <i class='icon-chevron-left'></i>
               <a href='/mozrie_hasmal'>
                 <h4>
-                  <i class='icon-chevron-left'></i>ספרים
+                  ספרים
                 </h4>
               </a>
+              <ul class='sub_categories hidden'>
+                <li class='sub_category' id='comics'> 
+                  <a href='mozrie_hasmal/telefonim'>
+                    <h5>
+                      קומיקסים
+                    </h5>
+                  </a>
+                </li>
+                <li class='sub_category' id='rare_books'> 
+                  <a href='/mozrie_hasmal/tablets'>
+                    <h5>
+                      ספרים נדירים
+                    </h5>
+                  </a>
+                </li>
+              </ul>
             </li>
-            <li class='main_category'>
+            <li class='main_category' id='services'>
+              <i class='icon-chevron-left'></i>
               <a href='/mozrie_hasmal'>
                 <h4>
-                  <i class='icon-chevron-left'></i>שירותים ומשרד
+                  שירותים ומשרד
                 </h4>
               </a>
+              <ul class='sub_categories hidden'>
+                <li class='sub_category' id='printing'> 
+                  <a href='mozrie_hasmal/telefonim'>
+                    <h5>
+                      שירותי הדפסה
+                    </h5>
+                  </a>
+                </li>
+              </ul>
             </li>
           </ul>
         </div>
         <div class='filters'>
           <p>
-            <label for="amount">Price range:</label>
+            <label for="amount">טווח מחירים:</label>
             <input type="text" id="amount" style="border: 0; color: #f6931f; font-weight: bold;" />
           </p> 
           <div id="slider-range"></div>

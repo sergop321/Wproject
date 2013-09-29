@@ -234,6 +234,10 @@ footer
 					}
 					.sub_categories
 					{
+						&.hidden 
+						{
+							display: none;
+						}
 						.sub_category
 						{
 							list-style: none;
@@ -260,6 +264,7 @@ footer
 					float: right;
 					margin-top: 3px;
 					margin-left: 1px;
+					cursor: pointer;
 				}
 			}
 		}

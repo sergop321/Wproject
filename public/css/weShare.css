@@ -212,184 +212,189 @@ footer a:hover {
   color: white;
 }
 /* line 238, ../sass/weShare.scss */
+.search_result .search_menu .categories .main_categories .main_category .sub_categories.hidden {
+  display: none;
+}
+/* line 242, ../sass/weShare.scss */
 .search_result .search_menu .categories .main_categories .main_category .sub_categories .sub_category {
   list-style: none;
   padding: 3px;
   padding-right: 10px;
 }
-/* line 243, ../sass/weShare.scss */
+/* line 247, ../sass/weShare.scss */
 .search_result .search_menu .categories .main_categories .main_category .sub_categories .sub_category h5 {
   margin-top: 0px;
   margin-bottom: 0px;
 }
-/* line 248, ../sass/weShare.scss */
+/* line 252, ../sass/weShare.scss */
 .search_result .search_menu .categories .main_categories .main_category .sub_categories .sub_category.selected {
   background: #5d97cf;
 }
-/* line 251, ../sass/weShare.scss */
+/* line 255, ../sass/weShare.scss */
 .search_result .search_menu .categories .main_categories .main_category .sub_categories .sub_category.selected a, .search_result .search_menu .categories .main_categories .main_category .sub_categories .sub_category.selected a:hover {
   color: white;
 }
-/* line 259, ../sass/weShare.scss */
+/* line 263, ../sass/weShare.scss */
 .search_result .search_menu .categories .main_categories i {
   float: right;
   margin-top: 3px;
   margin-left: 1px;
+  cursor: pointer;
 }
-/* line 270, ../sass/weShare.scss */
+/* line 275, ../sass/weShare.scss */
 .search_result .products .product {
   clear: both;
   margin-bottom: 20px;
   height: 210px;
   padding: 10px;
 }
-/* line 278, ../sass/weShare.scss */
+/* line 283, ../sass/weShare.scss */
 .search_result .products .product:hover {
   border: 1px solid #ddd;
   -webkit-box-shadow: rgba(255, 255, 255, 0.4) 0px 1px 0px inset, rgba(0, 0, 0, 0.3) 0 2px 4px;
   -moz-box-shadow: rgba(255, 255, 255, 0.4) 0px 1px 0px inset, rgba(0, 0, 0, 0.3) 0 2px 4px;
   box-shadow: rgba(255, 255, 255, 0.4) 0px 1px 0px inset, rgba(0, 0, 0, 0.3) 0 2px 4px;
 }
-/* line 283, ../sass/weShare.scss */
+/* line 288, ../sass/weShare.scss */
 .search_result .products .product .prod_img {
   float: right;
   margin-left: 15px;
 }
-/* line 288, ../sass/weShare.scss */
+/* line 293, ../sass/weShare.scss */
 .search_result .products .product .prod_description {
   float: right;
 }
-/* line 293, ../sass/weShare.scss */
+/* line 298, ../sass/weShare.scss */
 .search_result .products .product .prod_description .prod_name a:hover {
   text-decoration: none;
 }
 
 /*porudct page */
-/* line 307, ../sass/weShare.scss */
+/* line 312, ../sass/weShare.scss */
 .product .prod_description .prod_title {
   color: #27588f;
 }
-/* line 315, ../sass/weShare.scss */
+/* line 320, ../sass/weShare.scss */
 .product .prod_description .contact {
   background: #eaf2f5;
   padding: 30px;
 }
-/* line 320, ../sass/weShare.scss */
+/* line 325, ../sass/weShare.scss */
 .product .prod_description .contact .availability {
   font-size: 0.8em;
   color: white;
   font-weight: bold;
 }
-/* line 326, ../sass/weShare.scss */
+/* line 331, ../sass/weShare.scss */
 .product .prod_description .contact .contact_details {
   font-size: 1.2em;
 }
-/* line 330, ../sass/weShare.scss */
+/* line 335, ../sass/weShare.scss */
 .product .prod_description .contact .contact_details .phone {
   color: #27588f;
   font-weight: bold;
 }
-/* line 340, ../sass/weShare.scss */
+/* line 345, ../sass/weShare.scss */
 .product .prod_images .main_images {
   margin-top: 15px;
 }
-/* line 344, ../sass/weShare.scss */
+/* line 349, ../sass/weShare.scss */
 .product .prod_images .small_images {
   margin-top: 5px;
 }
-/* line 347, ../sass/weShare.scss */
+/* line 352, ../sass/weShare.scss */
 .product .prod_images .small_images img {
   margin-left: 10px;
 }
-/* line 355, ../sass/weShare.scss */
+/* line 360, ../sass/weShare.scss */
 .product .prod_technical_details h3, .product .prod_technical_details h4 {
   color: #27588f;
 }
-/* line 359, ../sass/weShare.scss */
+/* line 364, ../sass/weShare.scss */
 .product .prod_technical_details .detail_group {
   float: right;
   margin-left: 20px;
 }
-/* line 367, ../sass/weShare.scss */
+/* line 372, ../sass/weShare.scss */
 .product .more_details h3, .product .more_details h4 {
   color: #27588f;
 }
 
 /*profile page */
-/* line 377, ../sass/weShare.scss */
+/* line 382, ../sass/weShare.scss */
 .profile h1, .profile h2 {
   color: #27588f;
 }
-/* line 381, ../sass/weShare.scss */
+/* line 386, ../sass/weShare.scss */
 .profile .personal_details {
   margin-bottom: 20px;
 }
-/* line 384, ../sass/weShare.scss */
+/* line 389, ../sass/weShare.scss */
 .profile .personal_details .details {
   float: right;
   min-width: 450px;
 }
-/* line 389, ../sass/weShare.scss */
+/* line 394, ../sass/weShare.scss */
 .profile .personal_details .profile_image {
   float: left;
   margin-top: 20px;
 }
-/* line 395, ../sass/weShare.scss */
+/* line 400, ../sass/weShare.scss */
 .profile .latest_msgs {
   margin-top: 20px;
   margin-bottom: 20px;
 }
-/* line 401, ../sass/weShare.scss */
+/* line 406, ../sass/weShare.scss */
 .profile .latest_msgs .more_messages a {
   float: left;
   margin-top: -10px;
   margin-bottom: 10px;
 }
-/* line 409, ../sass/weShare.scss */
+/* line 414, ../sass/weShare.scss */
 .profile .your_products, .profile .last_viewed {
   padding: 0px 10px 10px;
   margin-top: 20px;
 }
 
 /*Messages page*/
-/* line 419, ../sass/weShare.scss */
+/* line 424, ../sass/weShare.scss */
 .messages h1, .messages h2, .messages h3 {
   color: #27588f;
 }
-/* line 423, ../sass/weShare.scss */
+/* line 428, ../sass/weShare.scss */
 .messages .message_group {
   margin-bottom: 20px;
 }
-/* line 427, ../sass/weShare.scss */
+/* line 432, ../sass/weShare.scss */
 .messages .message_categories {
   margin-top: 20px;
 }
 
 /*Forms*/
-/* line 436, ../sass/weShare.scss */
+/* line 441, ../sass/weShare.scss */
 .form h2, .form h3 h4, .form h5 {
   color: #27588f;
 }
-/* line 442, ../sass/weShare.scss */
+/* line 447, ../sass/weShare.scss */
 .form .control-group label {
   color: #5d97cf;
   margin-bottom: -1px;
 }
-/* line 446, ../sass/weShare.scss */
+/* line 451, ../sass/weShare.scss */
 .form .control-group label .form-required {
   color: red;
 }
-/* line 453, ../sass/weShare.scss */
+/* line 458, ../sass/weShare.scss */
 .form .control-group.checkbox input {
   float: right;
 }
-/* line 457, ../sass/weShare.scss */
+/* line 462, ../sass/weShare.scss */
 .form .control-group.checkbox .help-inline {
   margin-right: 20px;
 }
 
 /*Main navigation dropdown*/
-/* line 467, ../sass/weShare.scss */
+/* line 472, ../sass/weShare.scss */
 .cssmenu ul,
 .cssmenu li,
 .cssmenu span,
@@ -399,31 +404,31 @@ footer a:hover {
   position: relative;
 }
 
-/* line 475, ../sass/weShare.scss */
+/* line 480, ../sass/weShare.scss */
 .cssmenu:after, .cssmenu ul:after {
   content: '';
   display: block;
   clear: both;
 }
-/* line 481, ../sass/weShare.scss */
+/* line 486, ../sass/weShare.scss */
 .cssmenu a {
   background: none;
   display: inline-block;
   text-decoration: none;
 }
-/* line 490, ../sass/weShare.scss */
+/* line 495, ../sass/weShare.scss */
 .cssmenu ul {
   list-style: none;
 }
-/* line 494, ../sass/weShare.scss */
+/* line 499, ../sass/weShare.scss */
 .cssmenu > ul {
   float: left;
 }
-/* line 497, ../sass/weShare.scss */
+/* line 502, ../sass/weShare.scss */
 .cssmenu > ul > li {
   float: left;
 }
-/* line 501, ../sass/weShare.scss */
+/* line 506, ../sass/weShare.scss */
 .cssmenu > ul > li:hover:after {
   content: '';
   display: block;
@@ -438,35 +443,35 @@ footer a:hover {
   border-bottom: 10px solid #0fa1e0;
   margin-left: -10px;
 }
-/* line 516, ../sass/weShare.scss */
+/* line 521, ../sass/weShare.scss */
 .cssmenu > ul > li:first-child > a {
   border-radius: 5px 0 0 0;
   -moz-border-radius: 5px 0 0 0;
   -webkit-border-radius: 5px 0 0 0;
 }
-/* line 522, ../sass/weShare.scss */
+/* line 527, ../sass/weShare.scss */
 .cssmenu > ul > li:last-child > a {
   border-radius: 0 5px 0 0;
   -moz-border-radius: 0 5px 0 0;
   -webkit-border-radius: 0 5px 0 0;
 }
-/* line 528, ../sass/weShare.scss */
+/* line 533, ../sass/weShare.scss */
 .cssmenu > ul > li.active a {
   background: none;
 }
-/* line 532, ../sass/weShare.scss */
+/* line 537, ../sass/weShare.scss */
 .cssmenu > ul > li:hover > a {
   background: none;
 }
-/* line 537, ../sass/weShare.scss */
+/* line 542, ../sass/weShare.scss */
 .cssmenu .has-sub {
   z-index: 1;
 }
-/* line 541, ../sass/weShare.scss */
+/* line 546, ../sass/weShare.scss */
 .cssmenu .has-sub:hover > ul {
   display: block;
 }
-/* line 545, ../sass/weShare.scss */
+/* line 550, ../sass/weShare.scss */
 .cssmenu .has-sub ul {
   display: none;
   position: absolute;
@@ -475,11 +480,11 @@ footer a:hover {
   top: 115%;
   left: 0;
 }
-/* line 553, ../sass/weShare.scss */
+/* line 558, ../sass/weShare.scss */
 .cssmenu .has-sub ul li {
   *margin-bottom: -1px;
 }
-/* line 556, ../sass/weShare.scss */
+/* line 561, ../sass/weShare.scss */
 .cssmenu .has-sub ul li a {
   background: #0fa1e0;
   border-bottom: 1px dotted #6fc7ec;
@@ -489,27 +494,27 @@ footer a:hover {
   line-height: 120%;
   padding: 10px;
 }
-/* line 567, ../sass/weShare.scss */
+/* line 572, ../sass/weShare.scss */
 .cssmenu .has-sub ul li:hover a {
   background: #0c7fb0;
 }
-/* line 571, ../sass/weShare.scss */
+/* line 576, ../sass/weShare.scss */
 .cssmenu .has-sub ul .has-sub:hover > ul {
   display: block;
 }
-/* line 575, ../sass/weShare.scss */
+/* line 580, ../sass/weShare.scss */
 .cssmenu .has-sub ul .has-sub ul {
   display: none;
   position: absolute;
   left: 100%;
   top: 0;
 }
-/* line 581, ../sass/weShare.scss */
+/* line 586, ../sass/weShare.scss */
 .cssmenu .has-sub ul .has-sub ul li a {
   background: #0c7fb0;
   border-bottom: 1px dotted #6db2d0;
 }
-/* line 586, ../sass/weShare.scss */
+/* line 591, ../sass/weShare.scss */
 .cssmenu .has-sub ul .has-sub ul li a:hover {
   background: #095c80;
 }
