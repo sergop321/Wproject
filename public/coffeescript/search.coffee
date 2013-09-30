@@ -1,15 +1,4 @@
 $ ->
-
-	$("#slider-range").slider
-		range: true
-		min: 0
-		max: 1000
-		values: [75, 300]
-		slide: (event, ui) ->
-			$("#amount").val ui.values[0] + " - " + ui.values[1] + " שח "
-
-	$("#amount").val $("#slider-range").slider("values", 0) + " - " + $("#slider-range").slider("values", 1) + " שח "
-
 	
 	$("#main_categories a").click (event)->
 		event.preventDefault()
@@ -41,6 +30,12 @@ $ ->
 
 	category = get_parm_from_query("category")
 	sub_category = get_parm_from_query("sub_category")
+	origin = get_parm_from_query("origin")
+	available = get_parm_from_query("available")
+	price_max = get_parm_from_query("price_max")
+	price_min = get_parm_from_query("price_min")
+	price_max = if price_max? then parseInt(price_max, 10) else 1000
+	price_min = if price_min? then parseInt(price_min, 10) else 0
 
 	if category?
 		if $("##{category}").length > 0
@@ -50,4 +45,21 @@ $ ->
 				$("##{sub_category}").addClass("selected")
 			else
 				$("##{category}").addClass("selected")
+	if origin?
+		if $("#region option[value=#{origin}]").length > 0
+			$("#region option[value=#{origin}]").attr("selected", "selected")
+	if available?
+		if available == 1 || available == "1"
+			$("#available").prop("checked", true)
+
+	$("#slider-range").slider
+		range: true
+		min: 0
+		max: 1000
+		values: [price_min, price_max]
+		slide: (event, ui) ->
+			$("#product_price_range").val ui.values[0] + " - " + ui.values[1] + " שח "
+
+	$("#product_price_range").val $("#slider-range").slider("values", 0) + " - " + $("#slider-range").slider("values", 1) + " שח "
+
 		
