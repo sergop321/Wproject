@@ -6,8 +6,12 @@ $(function() {
     if ($(this).parent().hasClass("selected")) {
       return $(this).parent().removeClass("selected");
     } else {
+      $("#main_categories").find(".selected").removeClass("selected");
       return $(this).parent().addClass("selected");
     }
+  });
+  $("#research").click(function() {
+    return alert("not working yet, deal with it!");
   });
   $(".categories #main_categories i").click(function(event) {
     var sub_category;

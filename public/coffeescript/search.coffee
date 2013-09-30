@@ -5,9 +5,13 @@ $ ->
 		if $(@).parent().hasClass "selected"
 			$(@).parent().removeClass "selected"
 		else
+			$("#main_categories").find(".selected").removeClass("selected")
 			$(@).parent().addClass "selected"
 
 
+	#research button click event
+	$("#research").click ->
+		alert "not working yet, deal with it!"
 
 
 	#toggle open/close sub-categories
